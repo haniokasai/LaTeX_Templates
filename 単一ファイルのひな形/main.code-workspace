@@ -1,0 +1,69 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"latex-workshop.message.latexlog.exclude": [".*"],
+		"latex-workshop.latex.recipes": [
+			{
+			"name": "ptex2pdf",
+			"tools": [
+			  "ptex2pdf"
+			] 
+		},
+
+		{
+			"name": "pbibtex + ptex2pdf",
+			"tools": [
+				"pbibtex",
+			  "ptex2pdf"
+			] 
+		},
+		{
+			"name": "pbibtex",
+			"tools": [
+			"pbibtex",
+			]
+		}],
+		"latex-workshop.latex.tools": [
+			{
+			"name": "ptex2pdf",
+			"command": "ptex2pdf",
+			"args": [
+				"-l",
+				"-ot",
+				"-kanji=utf8 -synctex=1",
+				"--interaction=nonstopmode",
+				"%DOC%"
+			]
+		},
+		{
+			"name": "platex",
+			"command": "platex",
+			"args": [
+				"-kanji=utf8",
+				"main.tex",
+				"%DOC%"
+			]
+		},
+
+		{
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "-kanji=utf8",
+                "%DOCFILE%"
+            ]
+        }],
+		"latex-workshop.view.pdf.viewer": "tab",
+		"latex-workshop.message.warning.show": false,
+		"latex-workshop.latex.autoBuild.run": "onFileChange",
+		"latex-workshop.message.error.show": false,
+		"latex-workshop.bibtex-format.handleDuplicates": "Ignore Duplicates",
+		"latex-workshop.latex.autoBuild.run": "never",
+		"editor.wordWrap": "on",
+	}
+}
+//https://texwiki.texjp.org/?Visual%20Studio%20Code%2FLaTeX

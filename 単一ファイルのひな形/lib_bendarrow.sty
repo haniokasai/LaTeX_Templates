@@ -1,0 +1,35 @@
+%% �ʤ����
+\def\lbarrow{{\begin{picture}(10,10) 
+      \put(10,10){\oval(20,20)[lb]}\put(10,0){\vector(1,0){2}}
+    \end{picture}}}
+\def\ltarrow{{\begin{picture}(10,10) 
+      \put(10,0){\oval(20,20)[lt]}\put(10,10){\vector(1,0){2}}
+    \end{picture}}}
+\def\rbarrow{{\begin{picture}(10,10) 
+      \put(0,10){\oval(20,20)[rb]}\put(10,10){\vector(0,1){2}}
+    \end{picture}}}
+\def\rtarrow{{\begin{picture}(10,10) 
+      \put(0,0){\oval(20,20)[rt]}\put(10,0){\vector(0,-1){2}}
+    \end{picture}}}
+
+\endinput
+
+%%%%%%%%%%%% sample %%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{bendarrow}
+
+\begin{document}
+\ltarrow \rtarrow \\
+\lbarrow \rbarrow \\
+
+����ɽ\\
+\begin{tabular}{c||c|c|c|c|c|c|c}
+  $x$ &   & 1&   & 2 & & 3 & \\ \hline
+  $y'$ & $+$ &  0  & $-$ & $-$ & $-$ & 0 & $+$  \\
+  $y^{\prime\prime}$ & $-$ & $-$ & $-$ & 0 & $+$ & $+$ & $+$ \\ \hline
+  $y$  & \ltarrow & $����\atop 3$  & \rtarrow & $�Ѷ��� \atop 2 $ & \lbarrow & $�˾�\atop 1$ & \rbarrow
+\end{tabular}
+
+\end{document}
