@@ -1,0 +1,176 @@
+\providecommand{\main}{..}
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{subfiles}
+
+\usepackage{ascmac}
+\usepackage{lib_ulinej}
+\usepackage{lib_bendarrow}
+\usepackage{amsmath}
+\usepackage{datetime}
+\usepackage{comment}
+\usepackage{framed}
+\usepackage{arydshln}
+\usepackage{breqn}
+\usepackage{graphicx}
+\graphicspath{{\main/imgs/}{imgs/}}
+
+%https://stackoverflow.com/questions/722613/centering-a-table-wider-than-the-text-column
+\usepackage{chngpage} % allows for temporary adjustment of side margins
+
+%スクリプトの記述用
+\usepackage{color}
+\usepackage{listings,lib_jlisting}
+
+%適切な場所に画像等を表示
+\usepackage{here}
+
+%listoftables用
+\usepackage{tocloft}
+
+%余白
+\usepackage[top=4cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+
+%bibtex用
+\usepackage{url}
+\usepackage{natbib}
+
+%platex文字化け対策
+\usepackage[utf8]{inputenc}
+
+%タイトルのスペース
+\usepackage{titlesec}
+
+%表のキャプションをサイト
+\usepackage[hidelinks,colorlinks=false]{hyperref}
+\usepackage{lib_pxjahyper}%日本語の文字化け防止
+
+%ページずれ防止
+
+
+%言語の設定
+\lstset{%
+  tabsize=4, % Tabを何文字幅にするかの指定
+%  language={R}, % 言語の指定
+  basicstyle={\ttfamily\small}, % 標準の書体の指定
+  backgroundcolor={\color[gray]{.90}},%背景色
+%  identifierstyle={¥scriptsize}, % キーワードでない文字の書体
+%  commentstyle={¥scriptsize¥itshape},% コメントの書体
+%  keywordstyle={¥scriptsize¥bfseries},% キーワードの書体
+%  ndkeywordstyle={¥scriptsize},% キーワードの書体その2
+%  stringstyle={¥scriptsize¥ttfamily}, % ""で囲まれた文字の書体
+  columns=[l]{fullflexible},% 書体による列幅の違いを調整するか
+%  frame={tbl}, %枠追加
+%  frameround=ftff,%フレーム角の形状
+  framesep=5pt,%本文からframeまでの間隔
+  breaklines=true, % 行が長くなった場合の改行
+  numbers=left, % 左側に行番号追加
+  xrightmargin=0zw,%
+  xleftmargin=1zw,%
+  numberstyle={\scriptsize},% 行番号のスタイル
+  stepnumber=1, % 行番号をいくつ飛ばしで表示するか
+%  numbersep=1zw,% 行番号と本文の間隔。デフォルトは10pt
+  lineskip=-0.5ex, % 行間の調整
+  showstringspaces=false
+}
+
+\title{\vspace{-3cm} タイトル} 
+\author{\vspace{-1cm} 筆者名\thanks{所属とメアド}}
+\date{最終更新:~\today~\currenttime~(JST)}
+
+\begin{document}
+
+    \maketitle
+
+    \setcounter{tocdepth}{3}
+    % 3 = \subsubsectionまで
+    \tableofcontents
+
+    \makeatletter
+    \renewcommand\listoftables{%
+        \@starttoc{lot}%
+    }
+
+    
+    \clearpage
+    \subfile{pages/1_イントロダクション}
+
+  %  \newpage
+    \phantomsection
+        
+    \subfile{pages/5_付録}
+
+    \newpage
+    \phantomsection
+    \section*{参考文献}
+    \addcontentsline{toc}{section}{参考文献} 
+    \bibliographystyle{jecon}
+    %タイトルを消す
+    \renewcommand{\bibsection}{}
+    \bibliography{kncitations}
+
+
+\end{document}
+
+
+
+%下　記述例
+%\begin{itembox}[c]{ヒントと注意}
+%   まずは UMP を解かないと話が始まりません。
+%\end{itembox}
+%
+%  \includegraphics[width=16cm]{toi42.png}
+%
+%\text{rtarrow}\rtarrow,\text{rbarrow}\rbarrow,\text{ltarrow}\ltarrow,\text{lbarrow}\lbarrow \\\\
+%
+%   \begin{enumerate}
+%    \setlength{\leftskip}{2.5mm}
+%    \renewcommand{\labelenumi}{Step \theenumi.}
+%    \item A
+%    \item B
+%   \end{enumerate}
+%
+%   \begin{screen}
+%       (a)～(c)
+%       \begin{enumerate}
+%           \renewcommand{\labelenumi}{(\alph{enumi})}
+%           \item A
+%           \item B
+%       \end{enumerate}
+%   \end{screen}
+%
+%\begin{shadebox}
+%    ①~
+%    \begin{enumerate}
+%        \renewcommand{\labelenumi}{\textcircled{\scriptsize \theenumi}}
+%        \item プレーヤーはＡとＢの２人
+%        \item 同時に意志決定
+%    \end{enumerate}
+%\end{shadebox}
+%
+%\begin{table}[h]
+%      \begin{center}
+%        \begin{tabular}{|c|c|c|c|} \hline
+%            Ａ＼Ｂ&グー&チョキ&パー \\  \hline
+%            グー&0, 0&3, 0&0, 6 \\ \hline
+%        \end{tabular}
+%      \end{center}
+%      \caption{(1)}
+%      \label{(1)}
+%\end{table}
+%
+%\begin{eqnarray*}
+%    m &=& \frac{5}{21} \\
+%    n &=& \frac{10}{21}
+%\end{eqnarray*}
+%
+%増減表をつくる(必要な部分だけ埋めた)。
+%\begin{table}[htb]
+%  \centering
+%  \begin{tabular}{c||c|c|c|c|c|c|c|c|c}
+%    $x$               & 0    &          & &     & 10 \\ \hline
+%    $u'$              &  &       &           & &    \\
+%    $u^{\prime\prime}$&  &       &        &  & \\ \hline
+%    $u$               &  &  & $\mbox{極大値}\atop    $ &   &  
+%  \end{tabular}
+%\end{table}
