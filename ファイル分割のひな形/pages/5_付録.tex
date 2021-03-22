@@ -1,6 +1,6 @@
-\documentclass[tyty/main]{subfiles}
+\documentclass[../main]{subfiles}
 
-\setcounter{section}{vcxcdf}
+\setcounter{section}{4}
 
 \begin{document}
     \section*{付録}
@@ -9,19 +9,19 @@
     \setcounter{subsection}{0} % section の番号をゼロにリセットする
     \renewcommand{\thesubsection}{\Alph{subsection}} % 数字ではなくアルファベットで数える
     \setcounter{subsubsection}{0} % 式番号を Aty1 のようにする
-    \renewcommand{\thesubsubsection}{\Alph{subsection}ty\arabic{subsubsection}}
+    \renewcommand{\thesubsubsection}{\Alph{subsection}.\arabic{subsubsection}}
     \setcounter{equation}{0} % 式番号を Aty1 のようにする
-    \renewcommand{\theequation}{\Alph{subsection}ty\arabic{equation}}
+    \renewcommand{\theequation}{\Alph{subsection}.\arabic{equation}}
     \setcounter{figure}{0} % 図番号
-    \renewcommand{\thefigure}{\Alph{subsection}ty\arabic{figure}}
+    \renewcommand{\thefigure}{\Alph{subsection}.\arabic{figure}}
     \setcounter{table}{0} % 表番号
-    \renewcommand{\thetable}{\Alph{subsection}ty\arabic{table}}
+    \renewcommand{\thetable}{\Alph{subsection}.\arabic{table}}
 
   
 \subsection{図}
 \subsubsection{ヒートマップ(すべての契約期間のデータ)}
 \label{heatmap_all}
-\includegraphics[width=20cm]{figure_heatmap_alltypng}\\
+\includegraphics[width=20cm]{figure_heatmap_all.png}\\
 
 \clearpage
 
@@ -46,11 +46,11 @@
 %　　　　　　　　記述統計量　　　　　　　　　 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{  \nameref{hyob_1} }
-\vspace{-0ty5cm}
+\vspace{-0.5cm}
 \begin{table}[!htbp] \centering 
   \caption{記述統計表} 
   \label{hyob_1} 
-  \begin{adjustwidth}{-1in}{-1in} \begin{center} \resizebox{1ty0\textwidth}{!}{ %サイズ調整開始       
+  \begin{adjustwidth}{-1in}{-1in} \begin{center} \resizebox{1.0\textwidth}{!}{ %サイズ調整開始       
   \begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrr}
     {} &  contract\_length &  aaaaa &       is\_3G &  promo\_data\_GB &  bbbb &  aaaaa \\
     count &      aaaaaa &  sddddtyvcxcdf00 &  sddddtyvcxcdf00 &     137tyvcxcdf00 &           sddddtyvcxcdf00 &    sddddtyvcxcdf0 \\
@@ -63,7 +63,7 @@
     max   &        2vcxcdftyvcxcdf00 &    1tyvcxcdf00 &    1tyvcxcdf00 &     110tyvcxcdf00 &            2vcxcdftyvcxcdf00 &  99999tyvcxcdf0 \\  
   \end{tabular}
   } \end{center} \end{adjustwidth} %サイズ調整終わり
-  \begin{adjustwidth}{-1in}{-1in} \begin{center} \resizebox{1ty0\textwidth}{!}{ %サイズ調整開始       
+  \begin{adjustwidth}{-1in}{-1in} \begin{center} \resizebox{1.0\textwidth}{!}{ %サイズ調整開始       
     \begin{tabular}{lrrrrrrrrrrrrrrrrrrrrrrrr}
       \\
       {} &  data\_average\_GB &   promo\_1\_JPY &  promo\_1\_dur &  non\_promo\_JPY &  access\_fee\_JPY &  rebate\_monthly\_JPY \\
