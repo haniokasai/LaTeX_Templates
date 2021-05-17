@@ -7,3 +7,6 @@ LaTeX Workshop + Vscode + TeX Liveをインストールしておくこと。
 
 「ファイル分割のひな形」は、texファイルを分割している。文字数が多いときは分けた方がpdfの生成時間を短縮できる。
 
+## ダウンロード
+
+[ダウンロード](https://github.com/haniokasai/LaTeX_Templates/archive/refs/heads/main.zip)
